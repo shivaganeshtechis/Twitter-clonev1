@@ -221,7 +221,7 @@ POST
 }
 .postimage {
   height: 350px;
-  max-width: 450px;
+  max-width: 400px;
   border-radius: 20px;
 }
 
@@ -230,4 +230,3 @@ POST
     font-size: 20px;
   }
 }
-
