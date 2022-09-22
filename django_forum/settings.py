@@ -46,9 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'posts',
     'cloudinary',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -85,15 +87,22 @@ WSGI_APPLICATION = 'django_forum.wsgi.application'
 
 DATABASES = {
     'default': {
-
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'da0gd7qdgbrq',
-        'USER': 'nygeuhhahmjhgh',
-        'HOST': 'ec2-18-214-238-28.compute-1.amazonaws.com',
-        'PORT': 5432,
-        'PASSWORD': '23666bb4632535b9996c30f9eadba463064d17c9891c24abb4b5692074775bd3',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'da0gd7qdgbrq',
+#         'USER': 'nygeuhhahmjhgh',
+#         'HOST': 'ec2-18-214-238-28.compute-1.amazonaws.com',
+#         'PORT': 5432,
+#         'PASSWORD': '23666bb4632535b9996c30f9eadba463064d17c9891c24abb4b5692074775bd3',
+#     }
+# }
 
 
 # Password validation
